@@ -1,7 +1,10 @@
-import React from 'react'
+import {Header} from "semantic-ui-react";
+import React from "react";
 
-export default () => (
-  <div>
-    <h1>404 - Oh no's! We couldn't find that page :(</h1>
-  </div>
-)
+export default function order() {
+    return (
+        <div>
+            <Header>404 not found</Header>
+        </div>
+    );
+}
