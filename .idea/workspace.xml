@@ -20,48 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0df0079c-4c63-47c7-9c39-b6b17d5f3820" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/trailmix-order.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatsby-browser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout.module.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/global.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/global.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/global.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/order.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/order.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/CNAME" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jquery-3.5.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Router.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Dynamic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Post.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/404.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/about.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/blog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/order.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,12 +75,22 @@
       <recent name="C:\Users\2021158\OneDrive - Appleby College\Documents\GitHub\trailmix-order" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.develop">
     <configuration default="true" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="develop" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -130,6 +106,10 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="npm.develop" />
+      <item itemvalue="npm.deploy" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -140,6 +120,9 @@
       <option name="presentableId" value="Default" />
       <updated>1603926664316</updated>
       <workItem from="1603926667306" duration="13266000" />
+      <workItem from="1603981493827" duration="342000" />
+      <workItem from="1603997719892" duration="514000" />
+      <workItem from="1604014068677" duration="3574000" />
     </task>
     <servers />
   </component>
@@ -156,19 +139,20 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="257" y="210" width="1089" height="737" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603929394265">
+    <state x="257" y="210" width="1089" height="761" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603981722610">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
-    <state x="257" y="210" width="1089" height="737" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1602.1109@0.0.1602.1109" timestamp="1603929394265" />
-    <state x="553" y="357" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603931650489">
+    <state x="257" y="210" width="1089" height="761" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1602.1109@0.0.1602.1109" timestamp="1603981722610" />
+    <state x="553" y="357" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603997737752">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
-    <state x="553" y="357" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1602.1109@0.0.1602.1109" timestamp="1603931650489" />
+    <state x="553" y="357" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1602.1109@0.0.1602.1109" timestamp="1603997737752" />
     <state x="470" y="333" width="661" height="478" key="EditFileWatcherDialog" timestamp="1603929494347">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
@@ -177,22 +161,70 @@
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
     <state x="581" y="328" key="FileChooserDialogImpl/0.0.1602.1109@0.0.1602.1109" timestamp="1603929468219" />
-    <state width="1581" height="304" key="GridCell.Tab.0.bottom" timestamp="1603941122952">
+    <state width="1581" height="304" key="GridCell.Tab.0.bottom" timestamp="1604017667479">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
-    <state width="1581" height="304" key="GridCell.Tab.0.bottom/0.0.1602.1109@0.0.1602.1109" timestamp="1603941122952" />
-    <state width="1581" height="304" key="GridCell.Tab.0.center" timestamp="1603941122952">
+    <state width="1581" height="304" key="GridCell.Tab.0.bottom/0.0.1602.1109@0.0.1602.1109" timestamp="1604017667479" />
+    <state width="1581" height="304" key="GridCell.Tab.0.center" timestamp="1604017667479">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
-    <state width="1581" height="304" key="GridCell.Tab.0.center/0.0.1602.1109@0.0.1602.1109" timestamp="1603941122952" />
-    <state width="1581" height="304" key="GridCell.Tab.0.left" timestamp="1603941122952">
+    <state width="1581" height="304" key="GridCell.Tab.0.center/0.0.1602.1109@0.0.1602.1109" timestamp="1604017667479" />
+    <state width="1581" height="304" key="GridCell.Tab.0.left" timestamp="1604017667479">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
-    <state width="1581" height="304" key="GridCell.Tab.0.left/0.0.1602.1109@0.0.1602.1109" timestamp="1603941122952" />
-    <state width="1581" height="304" key="GridCell.Tab.0.right" timestamp="1603941122952">
+    <state width="1581" height="304" key="GridCell.Tab.0.left/0.0.1602.1109@0.0.1602.1109" timestamp="1604017667479" />
+    <state width="1581" height="304" key="GridCell.Tab.0.right" timestamp="1604017667479">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
-    <state width="1581" height="304" key="GridCell.Tab.0.right/0.0.1602.1109@0.0.1602.1109" timestamp="1603941122952" />
+    <state width="1581" height="304" key="GridCell.Tab.0.right/0.0.1602.1109@0.0.1602.1109" timestamp="1604017667479" />
+    <state width="1581" height="376" key="GridCell.Tab.1.bottom" timestamp="1603998239587">
+      <screen x="0" y="0" width="1602" height="1109" />
+    </state>
+    <state width="1581" height="376" key="GridCell.Tab.1.bottom/0.0.1602.1109@0.0.1602.1109" timestamp="1603998239587" />
+    <state width="1581" height="376" key="GridCell.Tab.1.center" timestamp="1603998239587">
+      <screen x="0" y="0" width="1602" height="1109" />
+    </state>
+    <state width="1581" height="376" key="GridCell.Tab.1.center/0.0.1602.1109@0.0.1602.1109" timestamp="1603998239587" />
+    <state width="1581" height="376" key="GridCell.Tab.1.left" timestamp="1603998239587">
+      <screen x="0" y="0" width="1602" height="1109" />
+    </state>
+    <state width="1581" height="376" key="GridCell.Tab.1.left/0.0.1602.1109@0.0.1602.1109" timestamp="1603998239587" />
+    <state width="1581" height="376" key="GridCell.Tab.1.right" timestamp="1603998239587">
+      <screen x="0" y="0" width="1602" height="1109" />
+    </state>
+    <state width="1581" height="376" key="GridCell.Tab.1.right/0.0.1602.1109@0.0.1602.1109" timestamp="1603998239587" />
+    <state width="1581" height="376" key="GridCell.Tab.2.bottom" timestamp="1603998239588">
+      <screen x="0" y="0" width="1602" height="1109" />
+    </state>
+    <state width="1581" height="376" key="GridCell.Tab.2.bottom/0.0.1602.1109@0.0.1602.1109" timestamp="1603998239588" />
+    <state width="1581" height="376" key="GridCell.Tab.2.center" timestamp="1603998239587">
+      <screen x="0" y="0" width="1602" height="1109" />
+    </state>
+    <state width="1581" height="376" key="GridCell.Tab.2.center/0.0.1602.1109@0.0.1602.1109" timestamp="1603998239587" />
+    <state width="1581" height="376" key="GridCell.Tab.2.left" timestamp="1603998239587">
+      <screen x="0" y="0" width="1602" height="1109" />
+    </state>
+    <state width="1581" height="376" key="GridCell.Tab.2.left/0.0.1602.1109@0.0.1602.1109" timestamp="1603998239587" />
+    <state width="1581" height="376" key="GridCell.Tab.2.right" timestamp="1603998239588">
+      <screen x="0" y="0" width="1602" height="1109" />
+    </state>
+    <state width="1581" height="376" key="GridCell.Tab.2.right/0.0.1602.1109@0.0.1602.1109" timestamp="1603998239588" />
+    <state width="1581" height="376" key="GridCell.Tab.3.bottom" timestamp="1603998239588">
+      <screen x="0" y="0" width="1602" height="1109" />
+    </state>
+    <state width="1581" height="376" key="GridCell.Tab.3.bottom/0.0.1602.1109@0.0.1602.1109" timestamp="1603998239588" />
+    <state width="1581" height="376" key="GridCell.Tab.3.center" timestamp="1603998239588">
+      <screen x="0" y="0" width="1602" height="1109" />
+    </state>
+    <state width="1581" height="376" key="GridCell.Tab.3.center/0.0.1602.1109@0.0.1602.1109" timestamp="1603998239588" />
+    <state width="1581" height="376" key="GridCell.Tab.3.left" timestamp="1603998239588">
+      <screen x="0" y="0" width="1602" height="1109" />
+    </state>
+    <state width="1581" height="376" key="GridCell.Tab.3.left/0.0.1602.1109@0.0.1602.1109" timestamp="1603998239588" />
+    <state width="1581" height="376" key="GridCell.Tab.3.right" timestamp="1603998239588">
+      <screen x="0" y="0" width="1602" height="1109" />
+    </state>
+    <state width="1581" height="376" key="GridCell.Tab.3.right/0.0.1602.1109@0.0.1602.1109" timestamp="1603998239588" />
     <state x="303" y="200" key="SettingsEditor" timestamp="1603929498013">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
