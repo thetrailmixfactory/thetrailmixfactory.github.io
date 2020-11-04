@@ -18,7 +18,7 @@ export default class IngredientCard extends React.Component {
 
     render() {
         return (
-            <Card onClick={this.onClick} style={{backgroundColor: this.state.checked ? "#00cc66" : "", transition: "background-color 1s"}}>
+            <Card onClick={this.onClick} style={{backgroundColor: this.state.checked ? "#90EE90" : "", transition: "background-color 0.5s"}} inline>
                 <Image src={this.props.imageSrc} size={"small"} centered/>
                 <Card.Content value={this.props.name}>
                     <Card.Header>{this.props.name}</Card.Header>

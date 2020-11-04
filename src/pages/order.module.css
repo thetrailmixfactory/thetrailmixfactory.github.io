@@ -2,4 +2,8 @@
   margin-top: 30px;
 }
 
+.hiddenField {
+  display: none !important;
+}
+
 /*# sourceMappingURL=order.module.css.map */

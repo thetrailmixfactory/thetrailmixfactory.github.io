@@ -12,7 +12,7 @@ import {
     Radio,
     Select,
     TextArea,
-    Message, Container, Segment
+    Message, Container, Segment, Card
 } from "semantic-ui-react"
 import 'semantic-ui-css/semantic.min.css'
 import encodeURL from "encodeurl"
@@ -78,7 +78,7 @@ export default class Order extends React.Component{
                 this.setState({success: true, error: false, submitted: true});
             } else {
                 //resubmission
-                this.setState({error: true, errorMessage: "You have already submitted your order!"});
+                this.setState({error: true, errorMessage: "You have already submitted your order! Please reload to order again!"});
                 event.preventDefault();
             }
 
@@ -115,15 +115,31 @@ export default class Order extends React.Component{
                     </Form.Group>
                     {/* Hidden Fields*/}
                     <Form.Field
+                        className={style.hiddenField}
                         control={Input}
                         name={"status"}
                         value={"PENDING"}
                         type={"hidden"}
                     />
                     <Form.Field
+                        className={style.hiddenField}
                         control={Input}
                         name={"price"}
                         value={this.state.price}
+                        type={"hidden"}
+                    />
+                    <Form.Field
+                        className={style.hiddenField}
+                        control={Input}
+                        name={"premade"}
+                        value={this.state.presetMenu}
+                        type={"hidden"}
+                    />
+                    <Form.Field
+                        className={style.hiddenField}
+                        control={Input}
+                        name={"choose"}
+                        value={this.state.chooseMenu}
                         type={"hidden"}
                     />
                     <br />
@@ -140,13 +156,16 @@ export default class Order extends React.Component{
 
                     {/* Choose Menu */}
                     <Segment color={"yellow"} style={{display: this.state.chooseMenu ? "" : "none"}}>
-                        <p>Stinky</p>
+                        <Card.Group itemsPerRow={2}>
+                            {data.prod.map(v => <IngredientCard imageSrc={v.imageLink} name={v.name} price={"$69"}/>)}
+                        </Card.Group>
                     </Segment>
 
                     {/* Preset Menu */}
                     <Segment color={"grey"} style={{display: this.state.presetMenu ? "" : "none"}}>
-                        {data.premade.map(v => <PremadeCard imageSrc={v.imageLink} name={v.name} price={"$69"} ingredients={Object.keys(v).filter(k => v[k] === 'x')}/>)}
-                        {/*<IngredientCard imageSrc={"https://www.bulkbarn.ca/app_themes/BulkBarn/Images/assets/products/full/23_000023.png"} name={"Baha"} price={"$69"} />*/}
+                        <Card.Group itemsPerRow={1}>
+                            {data.premade.map(v => <PremadeCard imageSrc={v.imageLink} name={v.name} price={"$69"} ingredients={Object.keys(v).filter(k => v[k] === 'x')}/>)}
+                        </Card.Group>
                     </Segment>
 
                     <br />
@@ -159,7 +178,7 @@ export default class Order extends React.Component{
 
                     <br />
                     <Form.Field control={Button} size={"large"} floated={"right"} type={"submit"} active>Submit</Form.Field>
-
+                    <br />
                     <iframe style={{width: 0, height: 0}} width={0} height={0} frameBorder={0} title={"dummyframe"} name={"dummyframe"} id={"dummyframe"}/>
                 </Form>
             </Layout>
