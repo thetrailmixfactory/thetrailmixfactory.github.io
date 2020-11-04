@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "encodeurl": "^1.0.2",
+    "excel-as-json2": "^0.3.0",
     "gatsby": "^2.24.85",
     "gatsby-plugin-favicon": "^3.1.6",
     "gatsby-plugin-react-helmet": "^3.3.14",

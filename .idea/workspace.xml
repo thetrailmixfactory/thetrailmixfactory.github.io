@@ -20,9 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0df0079c-4c63-47c7-9c39-b6b17d5f3820" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/IngredientCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/IngredientCard.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/extractdata.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/options.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/updateOptions.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/order.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +59,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/semantic" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/updateOptions.bat" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\2021158\OneDrive - Appleby College\Documents\GitHub\trailmix-order\node_modules\prettier" />
@@ -72,7 +77,21 @@
       <recent name="C:\Users\2021158\OneDrive - Appleby College\Documents\GitHub\trailmix-order\src" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.develop">
+  <component name="RunManager" selected="Node.js.Extract Data">
+    <configuration name="Extract Data" type="NodeJSConfigurationType" path-to-js-file="extractdata.js" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
+    <configuration name="Update Options" type="ShConfigurationType">
+      <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/updateOptions.bat" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -104,8 +123,10 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Node.js.Extract Data" />
       <item itemvalue="npm.develop" />
       <item itemvalue="npm.deploy" />
+      <item itemvalue="Shell Script.Update Options" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -124,6 +145,7 @@
       <workItem from="1604178533101" duration="638000" />
       <workItem from="1604369190235" duration="6956000" />
       <workItem from="1604411310700" duration="9466000" />
+      <workItem from="1604437879288" duration="4086000" />
     </task>
     <servers />
   </component>
@@ -146,10 +168,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="257" y="210" width="1089" height="761" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603981722610">
+    <state x="257" y="210" width="1089" height="833" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604451519080">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
-    <state x="257" y="210" width="1089" height="761" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1602.1109@0.0.1602.1109" timestamp="1603981722610" />
+    <state x="257" y="210" width="1089" height="833" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1602.1109@0.0.1602.1109" timestamp="1604451519080" />
     <state x="553" y="357" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603997737752">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
@@ -162,26 +184,26 @@
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
     <state x="470" y="333" width="661" height="478" key="EditFileWatcherDialog/0.0.1602.1109@0.0.1602.1109" timestamp="1603929494347" />
-    <state x="581" y="328" key="FileChooserDialogImpl" timestamp="1603929468219">
+    <state x="581" y="328" key="FileChooserDialogImpl" timestamp="1604451515363">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
-    <state x="581" y="328" key="FileChooserDialogImpl/0.0.1602.1109@0.0.1602.1109" timestamp="1603929468219" />
-    <state width="1581" height="304" key="GridCell.Tab.0.bottom" timestamp="1604434520806">
+    <state x="581" y="328" key="FileChooserDialogImpl/0.0.1602.1109@0.0.1602.1109" timestamp="1604451515363" />
+    <state width="1581" height="304" key="GridCell.Tab.0.bottom" timestamp="1604451981523">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
-    <state width="1581" height="304" key="GridCell.Tab.0.bottom/0.0.1602.1109@0.0.1602.1109" timestamp="1604434520806" />
-    <state width="1581" height="304" key="GridCell.Tab.0.center" timestamp="1604434520806">
+    <state width="1581" height="304" key="GridCell.Tab.0.bottom/0.0.1602.1109@0.0.1602.1109" timestamp="1604451981523" />
+    <state width="1581" height="304" key="GridCell.Tab.0.center" timestamp="1604451981522">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
-    <state width="1581" height="304" key="GridCell.Tab.0.center/0.0.1602.1109@0.0.1602.1109" timestamp="1604434520806" />
-    <state width="1581" height="304" key="GridCell.Tab.0.left" timestamp="1604434520806">
+    <state width="1581" height="304" key="GridCell.Tab.0.center/0.0.1602.1109@0.0.1602.1109" timestamp="1604451981522" />
+    <state width="1581" height="304" key="GridCell.Tab.0.left" timestamp="1604451981521">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
-    <state width="1581" height="304" key="GridCell.Tab.0.left/0.0.1602.1109@0.0.1602.1109" timestamp="1604434520806" />
-    <state width="1581" height="304" key="GridCell.Tab.0.right" timestamp="1604434520806">
+    <state width="1581" height="304" key="GridCell.Tab.0.left/0.0.1602.1109@0.0.1602.1109" timestamp="1604451981521" />
+    <state width="1581" height="304" key="GridCell.Tab.0.right" timestamp="1604451981523">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>
-    <state width="1581" height="304" key="GridCell.Tab.0.right/0.0.1602.1109@0.0.1602.1109" timestamp="1604434520806" />
+    <state width="1581" height="304" key="GridCell.Tab.0.right/0.0.1602.1109@0.0.1602.1109" timestamp="1604451981523" />
     <state width="1581" height="376" key="GridCell.Tab.1.bottom" timestamp="1603998239587">
       <screen x="0" y="0" width="1602" height="1109" />
     </state>

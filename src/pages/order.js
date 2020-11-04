@@ -2,7 +2,7 @@ import React from "react"
 import style from "./order.module.css";
 import isEmail from 'validator/lib/isEmail';
 import IngredientCard from "../components/IngredientCard";
-import proddata from "../data"
+import proddata from "../data.json"
 import {
     Button,
     Checkbox,
@@ -117,6 +117,12 @@ export default class Order extends React.Component{
                         control={Input}
                         name={"status"}
                         value={"PENDING"}
+                        type={"hidden"}
+                    />
+                    <Form.Field
+                        control={Input}
+                        name={"price"}
+                        value={this.state.price}
                         type={"hidden"}
                     />
                     <br />
