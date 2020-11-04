@@ -5,12 +5,12 @@ fs.unlinkSync("./data.json");
 
 
 const prodoptions = {
-    sheet: 'options',
+    sheet: '1',
     omitEmptyFields: false,
 }
 
 const premadeoptions = {
-    sheet: 'premade',
+    sheet: '2',
     omitEmptyFields: false,
 }
 
@@ -20,8 +20,8 @@ convertExcel("options.xlsx", undefined, prodoptions, (err, data) => {
     res.prod = data;
     //console.log(data);
 
-    convertExcel("options.xlsx", undefined, premadeoptions, (err, data) => {
-        res.premade = data;
+    convertExcel("options.xlsx", undefined, premadeoptions, (err, data2) => {
+        res.premade = data2;
 
         fs.writeFileSync("data.json", JSON.stringify(res));
     })

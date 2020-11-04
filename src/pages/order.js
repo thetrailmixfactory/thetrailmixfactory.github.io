@@ -2,7 +2,8 @@ import React from "react"
 import style from "./order.module.css";
 import isEmail from 'validator/lib/isEmail';
 import IngredientCard from "../components/IngredientCard";
-import proddata from "../data.json"
+import PremadeCard from "../components/PremadeCard";
+import data from "../data.json"
 import {
     Button,
     Checkbox,
@@ -144,7 +145,8 @@ export default class Order extends React.Component{
 
                     {/* Preset Menu */}
                     <Segment color={"grey"} style={{display: this.state.presetMenu ? "" : "none"}}>
-                        <IngredientCard imageSrc={"https://www.bulkbarn.ca/app_themes/BulkBarn/Images/assets/products/full/23_000023.png"} name={"Baha"} price={"$69"} />
+                        {data.premade.map(v => <PremadeCard imageSrc={v.imageLink} name={v.name} price={"$69"} ingredients={Object.keys(v).filter(k => v[k] === 'x')}/>)}
+                        {/*<IngredientCard imageSrc={"https://www.bulkbarn.ca/app_themes/BulkBarn/Images/assets/products/full/23_000023.png"} name={"Baha"} price={"$69"} />*/}
                     </Segment>
 
                     <br />
