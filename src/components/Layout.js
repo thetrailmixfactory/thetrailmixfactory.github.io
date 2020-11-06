@@ -8,6 +8,7 @@ export default function Layout(props) {
         <div className={style.layout}>
             <Helmet>
                 <title>The Trail Mix Factory</title>
+                <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0" />
             </Helmet>
             <header className={style.header}>
                     <Image src={"/logo.png"} href={"/"} size={"medium"} />
