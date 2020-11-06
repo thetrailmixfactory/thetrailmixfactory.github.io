@@ -166,20 +166,26 @@ export default class Order extends React.Component{
                         value={this.state.chooseMenu}
                         type={"hidden"}
                     />
-                    <Form.Field
-                        className={style.hiddenField}
-                        control={Input}
-                        name={"ingredients"}
-                        value={this.state.ingredients.join(", ")}
-                        type={"hidden"}
-                    />
-                    <Form.Field
-                        className={style.hiddenField}
-                        control={Input}
-                        name={"preset"}
-                        value={this.state.presetMix}
-                        type={"hidden"}
-                    />
+                    {
+                        this.state.chooseMenu ?
+                        <Form.Field
+                            className={style.hiddenField}
+                            control={Input}
+                            name={"ingredients"}
+                            value={this.state.ingredients.join(", ")}
+                            type={"hidden"}
+                        /> : ""
+                    }
+                    {
+                        this.state.presetMenu ?
+                        <Form.Field
+                            className={style.hiddenField}
+                            control={Input}
+                            name={"presetName"}
+                            value={this.state.presetMix}
+                            type={"hidden"}
+                        /> : ""
+                    }
                     <br />
 
                     <Message attached={"top"}>
