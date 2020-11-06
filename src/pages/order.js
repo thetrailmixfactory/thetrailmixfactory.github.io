@@ -198,9 +198,9 @@ export default class Order extends React.Component{
                     </Message>
 
                     <Button.Group fluid size={"large"} attached={"bottom"}>
-                        <Button type={"button"} onClick={this.renderPresetMenu}>Pre-made</Button>
+                        <Button color={this.state.presetMenu ? "yellow" : ""} type={"button"} onClick={this.renderPresetMenu}>Pre-made</Button>
                         <Button.Or />
-                        <Button color={"yellow"} type={"button"} onClick={this.renderChooseMenu}>Choose your own</Button>
+                        <Button color={this.state.chooseMenu ? "yellow" : ""} type={"button"} onClick={this.renderChooseMenu}>Choose your own</Button>
                     </Button.Group>
 
                     {/* Choose Menu */}
