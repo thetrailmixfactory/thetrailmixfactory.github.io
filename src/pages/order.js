@@ -30,6 +30,9 @@ export default class Order extends React.Component{
         this.getMailURL = this.getMailURL.bind(this);
         this.renderChooseMenu = this.renderChooseMenu.bind(this);
         this.renderPresetMenu = this.renderPresetMenu.bind(this);
+        this.addIngredient = this.addIngredient.bind(this);
+        this.removeIngredient = this.removeIngredient.bind(this);
+        this.setPresetMix = this.setPresetMix.bind(this);
 
         this.state = {
             success: false,
@@ -39,11 +42,32 @@ export default class Order extends React.Component{
             price: 0,
             presetMenu: false,
             chooseMenu: false,
+            ingredients: [],
+            categories: {},
+            presetMix: "",
             data: {
                 name: "",
-                email: ""
+                email: "",
             }
         };
+    }
+
+    addIngredient(i, c) {
+        this.setState({ingredients: [...this.state.ingredients, i], categories: {...this.state.categories, [c]: this.state.categories[c] === undefined ? 1 : this.state.categories[c]+1}});
+    }
+
+    removeIngredient(i, c) {
+        this.setState({ingredients: this.state.ingredients.filter(v => v !== i), categories: {...this.state.categories, [c]: this.state.categories[c]-1}});
+    }
+
+    setPresetMix(p) {
+        if (this.state.presetMix === "" || p === "") {
+            this.setState({presetMix: p});
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
     getMailURL() {
@@ -142,6 +166,20 @@ export default class Order extends React.Component{
                         value={this.state.chooseMenu}
                         type={"hidden"}
                     />
+                    <Form.Field
+                        className={style.hiddenField}
+                        control={Input}
+                        name={"ingredients"}
+                        value={this.state.ingredients.join(", ")}
+                        type={"hidden"}
+                    />
+                    <Form.Field
+                        className={style.hiddenField}
+                        control={Input}
+                        name={"preset"}
+                        value={this.state.presetMix}
+                        type={"hidden"}
+                    />
                     <br />
 
                     <Message attached={"top"}>
@@ -156,15 +194,22 @@ export default class Order extends React.Component{
 
                     {/* Choose Menu */}
                     <Segment color={"yellow"} style={{display: this.state.chooseMenu ? "" : "none"}}>
-                        <Card.Group itemsPerRow={2}>
-                            {data.prod.map(v => <IngredientCard imageSrc={v.imageLink} name={v.name} price={"$69"}/>)}
-                        </Card.Group>
+                        <Header>Please choose <strong className={style.strong}>6</strong> items for your mix:</Header>
+                        {data.defaults.map( c => (
+                            <Segment secondary>
+                                <Header size={"large"}>{c.Categories}</Header>
+                                <p>Please choose up to <strong className={style.strong}>{c.Limit}</strong> of the following:</p>
+                                <Card.Group itemsPerRow={2}>
+                                    {data.prod.filter(val => val.category === c.Categories).map(v => <IngredientCard add={this.addIngredient} remove={this.removeIngredient} category={c.Categories} imageSrc={v.imageLink} name={v.name} price={"$69"}/>)}
+                                </Card.Group>
+                            </Segment>)
+                        )}
                     </Segment>
 
                     {/* Preset Menu */}
                     <Segment color={"grey"} style={{display: this.state.presetMenu ? "" : "none"}}>
-                        <Card.Group itemsPerRow={1}>
-                            {data.premade.map(v => <PremadeCard imageSrc={v.imageLink} name={v.name} price={"$69"} ingredients={Object.keys(v).filter(k => v[k] === 'x')}/>)}
+                        <Card.Group itemsPerRow={2}>
+                            {data.premade.map(v => <PremadeCard setPreset={this.setPresetMix} imageSrc={v.imageLink} name={v.name} price={"$69"} ingredients={Object.keys(v).filter(k => v[k] === 'x')}/>)}
                         </Card.Group>
                     </Segment>
 

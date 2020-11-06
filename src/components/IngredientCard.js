@@ -13,19 +13,25 @@ export default class IngredientCard extends React.Component {
     }
 
     onClick(e) {
-        this.setState({checked: !this.state.checked});
+        if (this.state.checked) {
+            this.props.remove(this.props.name, this.props.category);
+            this.setState({checked: false});
+        } else {
+            this.props.add(this.props.name, this.props.category);
+            this.setState({checked: true});
+        }
+
     }
 
     render() {
         return (
-            <Card onClick={this.onClick} style={{backgroundColor: this.state.checked ? "#90EE90" : "", transition: "background-color 0.5s"}} inline>
+            <Card onClick={this.onClick} style={{backgroundColor: this.state.checked ? "#90EE90" : "", transition: "background-color 0.5s"}}>
                 <Image src={this.props.imageSrc} size={"small"} centered/>
                 <Card.Content value={this.props.name}>
                     <Card.Header>{this.props.name}</Card.Header>
                     <Card.Description>
                         {this.props.price}
                     </Card.Description>
-                    <Form.Field style={{display: "none"}} control={Input} type={"checkbox"} name={this.props.name} checked={this.state.checked ? "checked" : ""} />
                 </Card.Content>
             </Card>
         )

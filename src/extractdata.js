@@ -14,6 +14,11 @@ const premadeoptions = {
     omitEmptyFields: false,
 }
 
+const defualtoptions = {
+    sheet: '3',
+    omitEmptyFields: false,
+}
+
 var res = {};
 
 convertExcel("options.xlsx", undefined, prodoptions, (err, data) => {
@@ -23,7 +28,11 @@ convertExcel("options.xlsx", undefined, prodoptions, (err, data) => {
     convertExcel("options.xlsx", undefined, premadeoptions, (err, data2) => {
         res.premade = data2;
 
-        fs.writeFileSync("data.json", JSON.stringify(res));
+        convertExcel("options.xlsx", undefined, defualtoptions, (err, data3) => {
+            res.defaults = data3;
+
+            fs.writeFileSync("data.json", JSON.stringify(res));
+        })
     })
 })
 

@@ -12,7 +12,16 @@ export default class IngredientCard extends React.Component {
     }
 
     onClick(e) {
-        this.setState({checked: !this.state.checked});
+        if (this.state.checked) {
+            this.props.setPreset("");
+            this.setState({checked: false});
+        } else {
+            const set = this.props.setPreset(this.props.name);
+            if (set) {
+                this.setState({checked: true});
+            }
+        }
+
     }
 
     render() {
