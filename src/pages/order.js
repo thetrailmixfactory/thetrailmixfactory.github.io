@@ -75,6 +75,11 @@ export default class Order extends React.Component{
     }
 
     validateData(data) {
+        // check if name is not empty
+        if (data.name === "") {
+            return "Please fill in your name";
+        }
+
         // check if email address is valid
         if (!isEmail(data.email)) {
             return "Not a valid email";

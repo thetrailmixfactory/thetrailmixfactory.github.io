@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0df0079c-4c63-47c7-9c39-b6b17d5f3820" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PremadeCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PremadeCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/order.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +142,7 @@
       <workItem from="1604437879288" duration="5729000" />
       <workItem from="1604507103291" duration="2961000" />
       <workItem from="1604601996722" duration="370000" />
-      <workItem from="1604611613886" duration="5470000" />
+      <workItem from="1604611613886" duration="6297000" />
     </task>
     <servers />
   </component>

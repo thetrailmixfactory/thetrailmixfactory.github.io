@@ -5,6 +5,7 @@ export default class IngredientCard extends React.Component {
     constructor(props) {
         super(props);
         this.onClick = this.onClick.bind(this);
+        this.ingredientList = this.props.ingredients.reduce((t, c) => (t + c + ", "), "");
 
         this.state = {
             checked: false
@@ -34,7 +35,7 @@ export default class IngredientCard extends React.Component {
                         <span>{this.props.price}</span>
                     </Card.Meta>
                     <Card.Description>
-                        {this.props.ingredients.reduce((t, c) => (t + c + ", "), "")}
+                        {this.ingredientList.substring(0, this.ingredientList.length-2) /* -2 because ", " is added */}
                     </Card.Description>
                     <Form.Field style={{display: "none"}} control={Input} type={"checkbox"} name={this.props.name} checked={this.state.checked ? "checked" : ""} />
                 </Card.Content>
