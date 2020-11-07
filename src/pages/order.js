@@ -35,6 +35,7 @@ export default class Order extends React.Component{
         this.setPresetMix = this.setPresetMix.bind(this);
 
         this.state = {
+            chooseLimit: 6,
             success: false,
             submitted: false,
             error: false,
@@ -74,15 +75,34 @@ export default class Order extends React.Component{
         return "mailto://thetrailmixfactory@gmail.com?cc=farazmalik17465@gmail.com&subject=Cancel%20Request&body=Registered%20Email%3A%20" + encodeURL(this.state.data.email) + "%0AName%3A%20" + encodeURL(this.state.data.name) + "%0ADate%3A%20" + encodeURL(Date());
     }
 
-    validateData(data) {
+    validateData(formdata) {
         // check if name is not empty
-        if (data.name === "") {
+        if (formdata.name === "") {
             return "Please fill in your name";
         }
 
         // check if email address is valid
-        if (!isEmail(data.email)) {
+        if (!isEmail(formdata.email)) {
             return "Not a valid email";
+        }
+
+        // check if category limits are observed
+        let cat;
+        var totalselected = 0;
+        for (let i = 0; i < data.defaults.length; i++) {
+            cat = data.defaults[i];
+            if (!this.state.categories[cat.Categories]) continue;
+            if (Number(cat.Limit) < this.state.categories[cat.Categories]) {
+                return "Category limit for '" + cat.Categories + "' exceeded. Max amount per category: " + cat.Limit + ". Currently selected: " + this.state.categories[cat.Categories];
+            } else {
+                totalselected += this.state.categories[cat.Categories];
+            }
+        }
+
+        // check if total amount of ingredients is less than the limit
+        console.log(totalselected);
+        if (this.state.chooseLimit < totalselected) {
+            return "Too many ingredients selected. Max amount of ingredients: " + this.state.chooseLimit + ". Currently selected: " + totalselected;
         }
 
         return 0;
@@ -205,7 +225,7 @@ export default class Order extends React.Component{
 
                     {/* Choose Menu */}
                     <Segment color={"yellow"} style={{display: this.state.chooseMenu ? "" : "none"}}>
-                        <Header>Please choose <strong className={style.strong}>6</strong> items for your mix:</Header>
+                        <Header>Please choose <strong className={style.strong}>{this.state.chooseLimit}</strong> items for your mix:</Header>
                         {data.defaults.map( c => (
                             <Segment secondary>
                                 <Header size={"large"}>{c.Categories}</Header>
