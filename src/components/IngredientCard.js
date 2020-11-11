@@ -14,10 +14,10 @@ export default class IngredientCard extends React.Component {
 
     onClick(e) {
         if (this.state.checked) {
-            this.props.remove(this.props.name, this.props.category);
+            this.props.remove(this.props.name, this.props.category, this.props.price);
             this.setState({checked: false});
         } else {
-            this.props.add(this.props.name, this.props.category);
+            this.props.add(this.props.name, this.props.category, this.props.price);
             this.setState({checked: true});
         }
 
@@ -30,7 +30,7 @@ export default class IngredientCard extends React.Component {
                 <Card.Content value={this.props.name}>
                     <Card.Header>{this.props.name}</Card.Header>
                     <Card.Description>
-                        {this.props.price}
+                        {this.props.price}$
                     </Card.Description>
                 </Card.Content>
                 <Card.Content extra>

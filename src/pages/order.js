@@ -40,7 +40,8 @@ export default class Order extends React.Component{
             submitted: false,
             error: false,
             errorMessage: "Unexpected error",
-            price: 0,
+            choosePrice: 0,
+            presetPrice: 0,
             presetMenu: false,
             chooseMenu: false,
             ingredients: [],
@@ -53,17 +54,17 @@ export default class Order extends React.Component{
         };
     }
 
-    addIngredient(i, c) {
-        this.setState({ingredients: [...this.state.ingredients, i], categories: {...this.state.categories, [c]: this.state.categories[c] === undefined ? 1 : this.state.categories[c]+1}});
+    addIngredient(i, c, p) {
+        this.setState({ingredients: [...this.state.ingredients, i], categories: {...this.state.categories, [c]: this.state.categories[c] === undefined ? 1 : this.state.categories[c]+1}, choosePrice: this.state.choosePrice+p});
     }
 
-    removeIngredient(i, c) {
-        this.setState({ingredients: this.state.ingredients.filter(v => v !== i), categories: {...this.state.categories, [c]: this.state.categories[c]-1}});
+    removeIngredient(i, c, p) {
+        this.setState({ingredients: this.state.ingredients.filter(v => v !== i), categories: {...this.state.categories, [c]: this.state.categories[c]-1}, choosePrice: this.state.choosePrice-p});
     }
 
-    setPresetMix(p) {
+    setPresetMix(p, c) {
         if (this.state.presetMix === "" || p === "") {
-            this.setState({presetMix: p});
+            this.setState({presetMix: p, presetPrice: c});
             return true;
         } else {
             return false;
@@ -225,13 +226,13 @@ export default class Order extends React.Component{
 
                     {/* Choose Menu */}
                     <Segment color={"yellow"} style={{display: this.state.chooseMenu ? "" : "none"}}>
-                        <Header>Please choose <strong className={style.strong}>{this.state.chooseLimit}</strong> items for your mix:</Header>
+                        <Header>Please choose up to <strong className={style.strong}>{this.state.chooseLimit}</strong> items for your mix:</Header>
                         {data.defaults.map( c => (
                             <Segment secondary>
                                 <Header size={"large"}>{c.Categories}</Header>
                                 <p>Please choose up to <strong className={style.strong}>{c.Limit}</strong> of the following:</p>
                                 <Card.Group itemsPerRow={2}>
-                                    {data.prod.filter(val => val.category === c.Categories).map(v => <IngredientCard prodlink={v.link} add={this.addIngredient} remove={this.removeIngredient} category={c.Categories} imageSrc={v.imageLink} name={v.name} price={"$69"}/>)}
+                                    {data.prod.filter(val => val.category === c.Categories).map(v => <IngredientCard prodlink={v.link} add={this.addIngredient} remove={this.removeIngredient} category={c.Categories} imageSrc={v.imageLink} name={v.name} price={v.official_cost}/>)}
                                 </Card.Group>
                             </Segment>)
                         )}
@@ -240,12 +241,12 @@ export default class Order extends React.Component{
                     {/* Preset Menu */}
                     <Segment color={"grey"} style={{display: this.state.presetMenu ? "" : "none"}}>
                         <Card.Group itemsPerRow={2}>
-                            {data.premade.map(v => <PremadeCard setPreset={this.setPresetMix} imageSrc={v.imageLink} name={v.name} price={"$69"} ingredients={Object.keys(v).filter(k => v[k] === 'x')}/>)}
+                            {data.premade.map(v => <PremadeCard setPreset={this.setPresetMix} imageSrc={v.imageLink} name={v.name} price={v.price} ingredients={Object.keys(v).filter(k => v[k] === 'x')}/>)}
                         </Card.Group>
                     </Segment>
 
                     <br />
-                    <Message header={"Total"} content={"$" + this.state.price.toFixed(2)} attached={true}/>
+                    <Message header={"Total"} size={"large"} content={ "$" + (this.state.chooseMenu ? this.state.choosePrice : this.state.presetPrice).toFixed(2)} attached={true}/>
                     <Message size={"small"} attached={true}>
                         <p>Please check all details before ordering. To cancel an order, please email <a href={this.getMailURL()}>thetrailmixfactory@gmailcom</a>.</p>
                     </Message>
