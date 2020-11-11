@@ -235,7 +235,7 @@ export default class Order extends React.Component{
                                 <Header size={"large"}>{c.Categories}</Header>
                                 <p>Please choose up to <strong className={style.strong}>{c.Limit}</strong> of the following:</p>
                                 <Card.Group itemsPerRow={2}>
-                                    {data.prod.filter(val => val.category === c.Categories && this.state.enabled[val.name]).map(v => <IngredientCard prodlink={v.link} add={this.addIngredient} remove={this.removeIngredient} category={c.Categories} imageSrc={v.imageLink} name={v.name} price={v.official_cost}/>)}
+                                    {data.prod.filter(val => val.category === c.Categories && this.state.enabled[val.name]).map(v => <IngredientCard mass={v.mass_served} prodlink={v.link} add={this.addIngredient} remove={this.removeIngredient} category={c.Categories} imageSrc={v.imageLink} name={v.name} price={v.official_cost}/>)}
                                 </Card.Group>
                             </Segment>)
                         )}

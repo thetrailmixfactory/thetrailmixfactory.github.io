@@ -1,3 +1,4 @@
+const convert = require('excel-as-json2');
 convertExcel = require('excel-as-json2').processFile;
 const fs = require("fs");
 

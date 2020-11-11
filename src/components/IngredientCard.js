@@ -10,6 +10,8 @@ export default class IngredientCard extends React.Component {
         this.state = {
             checked: false
         }
+
+        //console.log(this.props.mass);
     }
 
     onClick(e) {
@@ -29,6 +31,9 @@ export default class IngredientCard extends React.Component {
                 <Image src={this.props.imageSrc} size={"small"} centered/>
                 <Card.Content value={this.props.name}>
                     <Card.Header>{this.props.name}</Card.Header>
+                    <Card.Meta>
+                        <span>{this.props.mass.toFixed(0)}g</span>
+                    </Card.Meta>
                     <Card.Description>
                         ${this.props.price.toFixed(2)}
                     </Card.Description>
