@@ -32,7 +32,7 @@ export default class IngredientCard extends React.Component {
                 <Card.Content value={this.props.name}>
                     <Card.Header>{this.props.name}</Card.Header>
                     <Card.Meta>
-                        <span>{this.props.price}$</span>
+                        <span>${this.props.price.toFixed(2)}</span>
                     </Card.Meta>
                     <Card.Description>
                         {this.ingredientList.substring(0, this.ingredientList.length-2) /* -2 because ", " is added */}

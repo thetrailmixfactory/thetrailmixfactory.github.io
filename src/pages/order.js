@@ -4,6 +4,7 @@ import isEmail from 'validator/lib/isEmail';
 import IngredientCard from "../components/IngredientCard";
 import PremadeCard from "../components/PremadeCard";
 import data from "../data.json"
+import enabled_ingredients from "../enabled.json"
 import {
     Button,
     Checkbox,
@@ -50,9 +51,11 @@ export default class Order extends React.Component{
             data: {
                 name: "",
                 email: "",
-            }
+            },
+            enabled: enabled_ingredients
         };
     }
+
 
     addIngredient(i, c, p) {
         this.setState({ingredients: [...this.state.ingredients, i], categories: {...this.state.categories, [c]: this.state.categories[c] === undefined ? 1 : this.state.categories[c]+1}, choosePrice: this.state.choosePrice+p});
@@ -232,7 +235,7 @@ export default class Order extends React.Component{
                                 <Header size={"large"}>{c.Categories}</Header>
                                 <p>Please choose up to <strong className={style.strong}>{c.Limit}</strong> of the following:</p>
                                 <Card.Group itemsPerRow={2}>
-                                    {data.prod.filter(val => val.category === c.Categories).map(v => <IngredientCard prodlink={v.link} add={this.addIngredient} remove={this.removeIngredient} category={c.Categories} imageSrc={v.imageLink} name={v.name} price={v.official_cost}/>)}
+                                    {data.prod.filter(val => val.category === c.Categories && this.state.enabled[val.name]).map(v => <IngredientCard prodlink={v.link} add={this.addIngredient} remove={this.removeIngredient} category={c.Categories} imageSrc={v.imageLink} name={v.name} price={v.official_cost}/>)}
                                 </Card.Group>
                             </Segment>)
                         )}
@@ -246,6 +249,7 @@ export default class Order extends React.Component{
                     </Segment>
 
                     <br />
+                    {/* Price counter */}
                     <Message header={"Total"} size={"large"} content={ "$" + (this.state.chooseMenu ? this.state.choosePrice : this.state.presetPrice).toFixed(2)} attached={true}/>
                     <Message size={"small"} attached={true}>
                         <p>Please check all details before ordering. To cancel an order, please email <a href={this.getMailURL()}>thetrailmixfactory@gmailcom</a>.</p>

@@ -30,7 +30,7 @@ export default class IngredientCard extends React.Component {
                 <Card.Content value={this.props.name}>
                     <Card.Header>{this.props.name}</Card.Header>
                     <Card.Description>
-                        {this.props.price}$
+                        ${this.props.price.toFixed(2)}
                     </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
