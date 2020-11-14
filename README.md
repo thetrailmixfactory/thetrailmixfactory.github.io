@@ -11,3 +11,5 @@ This is a HTML5 form built for my IB Project, the Trail Mix Factory! I used Gats
 - Dynamic and mobile friendly UI
 - Validation for category limits and personal details
 - Room for photos for both premade mixes and raw ingredients!
+- A JSON file for enabling/disabling ingredients from the menu
+- A custom naming system with text effects as part of the company experience!
