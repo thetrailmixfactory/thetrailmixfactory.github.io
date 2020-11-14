@@ -1,41 +1,22 @@
-const convert = require('excel-as-json2');
-convertExcel = require('excel-as-json2').processFile;
+const XLSX = require('xlsx');
 const fs = require("fs");
 
-fs.unlinkSync("./data.json");
-
-
-const prodoptions = {
-    sheet: '1',
-    omitEmptyFields: false,
+if (fs.existsSync("./data.json")) {
+    fs.unlinkSync("./data.json");
 }
 
-const premadeoptions = {
-    sheet: '2',
-    omitEmptyFields: false,
-}
+var workbook = XLSX.readFile('options.xlsx');
 
-const defualtoptions = {
-    sheet: '3',
-    omitEmptyFields: false,
-}
+res = {}
 
-var res = {};
+res.prod = XLSX.utils.sheet_to_json(workbook.Sheets["Options"]);
+res.premade = XLSX.utils.sheet_to_json(workbook.Sheets["Premade"]);
+res.defaults = XLSX.utils.sheet_to_json(workbook.Sheets["Defaults"]);
 
-convertExcel("options.xlsx", undefined, prodoptions, (err, data) => {
-    res.prod = data;
-    //console.log(data);
+fs.writeFileSync("./data.json", JSON.stringify(res));
 
-    convertExcel("options.xlsx", undefined, premadeoptions, (err, data2) => {
-        res.premade = data2;
 
-        convertExcel("options.xlsx", undefined, defualtoptions, (err, data3) => {
-            res.defaults = data3;
 
-            fs.writeFileSync("data.json", JSON.stringify(res));
-        })
-    })
-})
 
 
 
