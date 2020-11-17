@@ -178,7 +178,7 @@ export default class Order extends React.Component{
                         className={style.hiddenField}
                         control={Input}
                         name={"price"}
-                        value={this.state.price}
+                        value={this.state.chooseMenu ? this.state.choosePrice : this.state.presetPrice}
                         type={"hidden"}
                     />
                     <Form.Field
