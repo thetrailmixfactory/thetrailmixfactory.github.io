@@ -16,7 +16,7 @@ import encodeURL from "encodeurl"
 import Layout from "../components/Layout";
 
 export default class Index extends React.Component{
-    submitURL = "https://api.apispreadsheets.com/data/2728/";
+    submitURL = "https://script.google.com/macros/s/AKfycbwfSKuQ4XhdUonSJnjCP4CehWwlqJYAkmg0oJmkwoZLgzTrtwCn/exec";
 
     constructor(props) {
         super(props);
@@ -100,7 +100,6 @@ export default class Index extends React.Component{
         }
 
         // check if total amount of ingredients is less than the limit
-        console.log(totalselected);
         if (this.state.chooseLimit < totalselected) {
             return "Too many ingredients selected. Max amount of ingredients: " + this.state.chooseLimit + ". Currently selected: " + totalselected;
         }
@@ -121,19 +120,21 @@ export default class Index extends React.Component{
     }
 
     onSubmit(event) {
+        event.preventDefault();
         const err = this.validateData(this.state.data);
         if (err === 0) {
             if (!this.state.submitted) {
                 this.setState({success: true, error: false, submitted: true});
+                fetch(this.submitURL, { method: 'POST', body: new FormData(event.target)})
+                    .then(response => console.log('Success!', response))
+                    .catch(error => console.error('Error!', error.message))
             } else {
                 //resubmission
                 this.setState({error: true, errorMessage: "You have already submitted your order! Please reload to order again!"});
-                event.preventDefault();
             }
 
         } else {
             this.setState({error: true, errorMessage: err});
-            event.preventDefault();
         }
     }
 
