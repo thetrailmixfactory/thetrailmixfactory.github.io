@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, Image, Form, Checkbox, Input} from "semantic-ui-react";
+import {Card, Image, Form, Input} from "semantic-ui-react";
 
 export default class IngredientCard extends React.Component {
     constructor(props) {

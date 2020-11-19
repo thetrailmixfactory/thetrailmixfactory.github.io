@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, Image, Form, Checkbox, Input, Icon} from "semantic-ui-react";
+import {Card, Image, Icon} from "semantic-ui-react";
 import style from "./IngredientCard.module.css";
 
 export default class IngredientCard extends React.Component {
@@ -40,7 +40,7 @@ export default class IngredientCard extends React.Component {
                 </Card.Content>
                 <Card.Content extra>
                     <Icon name={"nutritionix"} />
-                    <a target={"_blank"} href={this.props.prodlink}>Nutritional Values</a>
+                    <a target={"_blank"} rel={"noreferrer"} href={this.props.prodlink}>Nutritional Values</a>
                 </Card.Content>
             </Card>
         )

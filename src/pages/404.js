@@ -5,7 +5,7 @@ export default function order() {
 
     return (
         <div>
-            <Header><a href={"/order"}>Redirect to order form...</a></Header>
+            <Header><a href={"/"}>Click to redirect to order form...</a></Header>
         </div>
     );
 }
