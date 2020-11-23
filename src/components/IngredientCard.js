@@ -16,10 +16,10 @@ export default class IngredientCard extends React.Component {
 
     onClick(e) {
         if (this.state.checked) {
-            this.props.remove(this.props.name, this.props.category, this.props.price);
+            this.props.remove(this.props.name, this.props.category, this.props.price, this.props.mass);
             this.setState({checked: false});
         } else {
-            this.props.add(this.props.name, this.props.category, this.props.price);
+            this.props.add(this.props.name, this.props.category, this.props.price, this.props.mass);
             this.setState({checked: true});
         }
 

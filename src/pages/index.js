@@ -39,6 +39,7 @@ export default class Index extends React.Component{
             error: false,
             errorMessage: "Unexpected error",
             choosePrice: 0,
+            chooseMass: 0,
             presetPrice: 0,
             presetMenu: false,
             chooseMenu: false,
@@ -54,12 +55,12 @@ export default class Index extends React.Component{
     }
 
 
-    addIngredient(i, c, p) {
-        this.setState({ingredients: [...this.state.ingredients, i], categories: {...this.state.categories, [c]: this.state.categories[c] === undefined ? 1 : this.state.categories[c]+1}, choosePrice: this.state.choosePrice+p});
+    addIngredient(i, c, p, m) {
+        this.setState({ingredients: [...this.state.ingredients, i], categories: {...this.state.categories, [c]: this.state.categories[c] === undefined ? 1 : this.state.categories[c]+1}, choosePrice: this.state.choosePrice+p, chooseMass: this.state.chooseMass+m});
     }
 
-    removeIngredient(i, c, p) {
-        this.setState({ingredients: this.state.ingredients.filter(v => v !== i), categories: {...this.state.categories, [c]: this.state.categories[c]-1}, choosePrice: this.state.choosePrice-p});
+    removeIngredient(i, c, p, m) {
+        this.setState({ingredients: this.state.ingredients.filter(v => v !== i), categories: {...this.state.categories, [c]: this.state.categories[c]-1}, choosePrice: this.state.choosePrice-p, chooseMass: this.state.chooseMass-m});
     }
 
     setPresetMix(p, c) {
@@ -69,7 +70,6 @@ export default class Index extends React.Component{
         } else {
             return false;
         }
-
     }
 
     getMailURL() {
@@ -252,6 +252,7 @@ export default class Index extends React.Component{
                     {/* Price counter */}
                     <Message header={"Total"} size={"large"} content={ "$" + (this.state.chooseMenu ? this.state.choosePrice : this.state.presetPrice).toFixed(2)} attached={true}/>
                     <Message size={"small"} attached={true}>
+                        <p>Total approximate mass: {this.state.chooseMass.toFixed(0)}g</p>
                         <p>Please check all details before ordering. To cancel an order, please email <a href={this.getMailURL()}>thetrailmixfactory@gmailcom</a>.</p>
                     </Message>
                     <Message success header={'Order Completed!'}  content={'Your order was submitted!'} />
