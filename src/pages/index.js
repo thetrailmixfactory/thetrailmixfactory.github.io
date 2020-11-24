@@ -15,6 +15,8 @@ import 'semantic-ui-css/semantic.min.css'
 import encodeURL from "encodeurl"
 import Layout from "../components/Layout";
 
+function pad(a,b){return(1e15+a+"").slice(-b)}
+
 export default class Index extends React.Component{
     submitURL = "https://script.google.com/macros/s/AKfycbwfSKuQ4XhdUonSJnjCP4CehWwlqJYAkmg0oJmkwoZLgzTrtwCn/exec";
 
@@ -235,7 +237,7 @@ export default class Index extends React.Component{
                                 <Header size={"large"}>{c.Categories}</Header>
                                 <p>Please choose up to <strong className={style.strong}>{c.Limit}</strong> of the following:</p>
                                 <Card.Group itemsPerRow={2}>
-                                    {data.prod.filter(val => val.category === c.Categories && this.state.enabled[val.name]).map(v => <IngredientCard mass={v.mass_served} prodlink={v.link} add={this.addIngredient} remove={this.removeIngredient} category={c.Categories} imageSrc={v.imageLink} name={v.name} price={v.official_cost}/>)}
+                                    {data.prod.filter(val => val.category === c.Categories && this.state.enabled[val.name]).map(v => <IngredientCard mass={v.mass_served} prodlink={v.link} add={this.addIngredient} remove={this.removeIngredient} category={c.Categories} imageSrc={"https://www.bulkbarn.ca/app_themes/BulkBarn/Images/assets/products/full/"+v.bbid+ "_" + pad(v.bbid, 6) + ".png"} name={v.name} price={v.official_cost}/>)}
                                 </Card.Group>
                             </Segment>)
                         )}
