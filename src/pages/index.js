@@ -102,11 +102,13 @@ export default class Index extends React.Component{
             }
         }
 
-        // check if total amount of ingredients is less than the limit and most than min
-        if (this.state.chooseLimit < totalselected) {
-            return "Too many ingredients selected. Max amount of ingredients: " + this.state.chooseLimit + ". Currently selected: " + totalselected;
-        } else if (this.state.chooseMin > totalselected) {
-            return "Too few ingredients selected. Min amount of ingredients: " + this.state.chooseMin + ". Currently selected: " + totalselected;
+        if (this.state.chooseMenu) {
+            // check if total amount of ingredients is less than the limit and most than min
+            if (this.state.chooseLimit < totalselected) {
+                return "Too many ingredients selected. Max amount of ingredients: " + this.state.chooseLimit + ". Currently selected: " + totalselected;
+            } else if (this.state.chooseMin > totalselected) {
+                return "Too few ingredients selected. Min amount of ingredients: " + this.state.chooseMin + ". Currently selected: " + totalselected;
+            }
         }
 
         return 0;
