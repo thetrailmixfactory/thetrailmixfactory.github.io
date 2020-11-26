@@ -109,6 +109,11 @@ export default class Index extends React.Component{
             } else if (this.state.chooseMin > totalselected) {
                 return "Too few ingredients selected. Min amount of ingredients: " + this.state.chooseMin + ". Currently selected: " + totalselected;
             }
+        } else {
+            // check if preset is selected
+            if (this.state.presetMix === "") {
+                return "Please select a preset mix";
+            }
         }
 
         return 0;
