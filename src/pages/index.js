@@ -247,6 +247,7 @@ export default class Index extends React.Component{
 
                     {/* Preset Menu */}
                     <Segment color={"grey"} style={{display: this.state.presetMenu ? "" : "none"}}>
+                        <Header>Please deselect your current selection before selecting something else by clicking on it.</Header>
                         <Card.Group itemsPerRow={2}>
                             {data.premade.map(v => <PremadeCard setPreset={this.setPresetMix} imageSrc={v.imageLink} name={v.name} price={v.price} ingredients={Object.keys(v).filter(k => v[k] === 'x')}/>)}
                         </Card.Group>
